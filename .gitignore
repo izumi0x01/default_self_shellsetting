@@ -1,0 +1,13 @@
+#secret directory
+.ssh/*
+
+#tmp files
+.bash_history
+.lesshst
+.motd_shown
+.viminfo
+.cache/*
+.dotnet/*
+.vscode-remote-containers/*
+.vscode-server/*
+.wget-hsts
