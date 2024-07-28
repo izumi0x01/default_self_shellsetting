@@ -46,6 +46,11 @@ oh_my_posh(){
   source ~/.bashrc
 }
 
+colors(){
+  sudo apt install ruby ruby-dev ruby-colorize
+  sudo gem install colors
+}
+
 oh_my_posh_change_theme(){
   return 0
 }
@@ -72,6 +77,9 @@ while [[ "$#" -gt 0 ]]; do
             ;;
         -i|--initial-install)
             initial_install
+            ;;
+        -c|--colors)
+            colors
             ;;
         *)
             echo "Unknown option: $1"
