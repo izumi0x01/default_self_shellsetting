@@ -31,10 +31,11 @@ validate_dependencies() {
     validate_dependency dirname
 }
 
+validate_dependencies
 
 install_Nerd_fonts(){
-  mkdir -p ~/.local/share/fonts
-  cd ~/.local/share/fonts
+  mkdir -p ~/.fonts
+  cd ~/.fonts
   curl -fLo "Hack Regular Nerd Font Complete.ttf" https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/Hack/Regular/complete/Hack%20Regular%20Nerd%20Font%20Complete.ttf
   fc-cache -fv
   cd ~
@@ -46,10 +47,10 @@ oh_my_posh(){
   curl -s https://ohmyposh.dev/install.sh | bash -s -- -d ~/.local/bin
   chmod u+x ~/.local/bin/oh-my-posh
 
-  # 環境変数の追加
+  # 環境変数に.local/binの場所の追加
   echo 'if [[ "$PATH" != *"$HOME/.local/bin"* ]]; then
       export PATH="$HOME/.local/bin:$PATH"
-  fi' >> ~/.bash_profile
+  fi' >> ~/.profile
 
   # テーマのダウンロード
   echo "Downloading themes..."
@@ -75,7 +76,6 @@ oh_my_posh(){
 }
 
 
-validate_dependencies
 
 # 引数解析
 while [[ "$#" -gt 0 ]]; do
