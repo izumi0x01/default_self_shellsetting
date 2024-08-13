@@ -5,9 +5,7 @@ show_help(){
   echo 
   echo "these are common install command"
   echo "  --help"
-  echo "  --nerd"
   echo "  --oh-my-posh"
-  echo "  --tmux"
 }
 # 引数が指定されているかチェック
 if [ $# -eq 0 ]; then
@@ -63,10 +61,10 @@ validate_dependencies
 oh_my_posh(){
    # oh-my-poshのダウンロード
    # 実行ファイルの場所は.local/binで、themeの場所は.poshtemes
-  mkdir -p ~/.local/bin
-  chmod u+rwX ~/.local/bin
+  mkdir -p $HOME/.local/bin
+  chmod u+rwX $HOME/.local/bin
   mkdir -p $HOME/.poshthemes
-  source $HOME/install_oh-my-posh.sh -d ~/.local/bin
+  source $HOME/oh-my-posh.sh -d $HOME/.local/bin
   source $HOME/.bashrc
 }
 
@@ -78,13 +76,8 @@ while [[ "$#" -gt 0 ]]; do
         --help)
             show_help
             ;;
-        --nerd)
-            install_Nerd_fonts
-            ;;
         --oh-my-posh)
             oh_my_posh
-            ;;
-        --tmux)
             ;;
         *)
             echo "Unknown option: $1"
