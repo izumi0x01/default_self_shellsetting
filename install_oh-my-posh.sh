@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 install_dir=""
-themes_dir=""
+themes_dir="$HOME/.poshthemes"
 executable=""
 
 error() {
