@@ -1,18 +1,5 @@
 #!/bin/bash
 
-show_help(){
-  echo "Usage: $(basename ${BASH_SOURCE[0]}) [OPTIONS]"
-  echo 
-  echo "these are common install command"
-  echo "  --help"
-  echo "  --oh-my-posh"
-}
-# 引数が指定されているかチェック
-if [ $# -eq 0 ]; then
-    show_help
-    return 0
-fi
-
 info() {
     printf "$1\n"
 }
@@ -48,34 +35,13 @@ install_Nerd_fonts(){
     source $HOME/Linux/nerd-fonts.sh -i https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/DroidSansMono/DroidSansMNerdFontMono-Regular.otf -u
 }
 
-validate_dependencies
-#install_Nerd_fonts
-
 oh_my_posh(){
    # oh-my-poshのダウンロード
    # 実行ファイルの場所は.local/binで、themeの場所は.poshtemes
-  mkdir -p $HOME/.local/bin
-  chmod u+rwX $HOME/.local/bin
-  mkdir -p $HOME/.poshthemes
   source $HOME/oh-my-posh.sh -d $HOME/.local/bin
   source $HOME/.bashrc
 }
 
-
-
-# 引数解析
-while [[ "$#" -gt 0 ]]; do
-    case "$1" in
-        --help)
-            show_help
-            ;;
-        --oh-my-posh)
-            oh_my_posh
-            ;;
-        *)
-            echo "Unknown option: $1"
-            show_help
-            ;;
-    esac
-    shift
-done
+validate_dependencies
+install_Nerd_fonts
+oh_my_posh
