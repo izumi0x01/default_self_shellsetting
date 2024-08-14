@@ -40,19 +40,12 @@ validate_dependencies() {
     validate_dependency unzip
     validate_dependency realpath
     validate_dependency dirname
+    validate_dependency fontconfig
 }
 
 install_Nerd_fonts(){
-    # 確認したいフォントファイル名
-    FONT_FILE="Droid Sans Mono for Powerline Nerd Font Complete.otf"
-    FONT_DIR="$HOME/.local/share/fonts"
-
-    # フォントファイルの存在を確認
-    if [ -f "$FONT_DIR/$FONT_FILE" ]; then
-        echo "no ploblem"
-    else
-        error "Nerd Font file '$FONT_FILE' does not exist in $FONT_DIR.\n"
-    fi
+    chmod +x $HOME/Linux/nerd-fonts.sh
+    source $HOME/Linux/nerd-fonts.sh -i https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/DroidSansMono/DroidSansMNerdFontMono-Regular.otf -u
 }
 
 validate_dependencies
