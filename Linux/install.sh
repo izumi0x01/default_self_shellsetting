@@ -28,6 +28,9 @@ validate_dependencies() {
     validate_dependency realpath
     validate_dependency dirname
     validate_dependency fontconfig
+    validate_dependency ruby
+    validate_dependency gem
+    validate_dependency ruby-dev
 }
 
 install_Nerd_fonts(){
@@ -42,6 +45,11 @@ oh_my_posh(){
   source $HOME/.bashrc
 }
 
+colorls(){
+    gem install colorls --user-install
+}
+
 validate_dependencies
 install_Nerd_fonts
 oh_my_posh
+colorls
