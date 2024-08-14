@@ -86,6 +86,7 @@ set_install_directory() {
     # check if $HOME/.local/bin exists and is writable
     if ([ -d "$HOME/.local/bin" ] && [ -w "$HOME/.local/bin" ]) || mkdir "$HOME/.local/bin"; then
         install_dir="$HOME/.local/bin"
+        chmod u+rwX $HOME/.local/bin
         return 0
     fi
 
