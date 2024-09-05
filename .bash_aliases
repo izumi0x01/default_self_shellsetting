@@ -29,3 +29,8 @@ gll() { git log --pretty=format:"%C(yellow)%h%Cred%d %Creset%s%Cblue [%cn]" --de
 gld() { git log --pretty=format:"%C(yellow)%h %C(green)%ad%Cred%d %Creset%s%Cblue [%cn]" --decorate --date=short --graph; }
 gls() { git log --pretty=format:"%C(green)%h %C(yellow)[%ad]%Cred%d %Creset%s%Cblue [%cn]" --decorate --date=relative; }
 gb() { git for-each-ref --sort='-authordate' --format='%(authordate)%09%(objectname:short)%09%(refname)' refs/heads | sed -e 's-refs/heads/--'; }
+
+alias copy="xsel --clipboard --input"
+alias paste="xsel --clipboard --output"
+
+alias nat="nautilus $(pwd) &"
