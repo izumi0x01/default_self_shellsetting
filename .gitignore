@@ -11,3 +11,6 @@
 .vscode-remote-containers/*
 .vscode-server/*
 .wget-hsts
+
+#tmux ignore
+.tmux/*
