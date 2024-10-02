@@ -18,4 +18,17 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
+# 初回シェル時のみ tmux実行
+if [ $SHLVL = 1 ]; then
+    # tmuxのmainセッションにアタッチ
+    /bin/tmux a -t main
+    tmux_return=$?
+    # 失敗したらmainセッションを作成
+    if [ $tmux_return = 1 ]; then
+        /bin/tmux new-session -s main -n tmuxの使い方 "less ~/tmux.txt"
+    fi
+fi
+
 eval "$(oh-my-posh init bash --config ~/.poshthemes/catppuccin_macchiato.omp.json)"
+
+

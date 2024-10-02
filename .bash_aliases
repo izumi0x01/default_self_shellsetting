@@ -2,16 +2,14 @@ alias cp='cp -i'
 alias mv='mv -i'
 alias rm='rm -i'
 
-for N in $(seq 10)
-do 
-  S='.'
+for N in {1..10}
+do
   D=''
   for I in $(seq $N)
   do
-    S="$S."
     D="$D../"
   done
-  alias cd$S="cd $D"
+  alias ..$N="cd $D"
 done
 
 alias c="docker-compose "
@@ -34,3 +32,18 @@ alias copy="xsel --clipboard --input"
 alias paste="xsel --clipboard --output"
 
 alias nat="nautilus $(pwd) &"
+
+alias tm="tmux"
+alias tml="tmux list-sessions"
+alias tms="tmux new-session"
+alias tmnw="tmux new-session -s"
+alias tmd="tmux detach"
+alias tma="tmux attach"
+alias tmat="tmux attach -t"
+alias tmkt="tmux kill-session -t"
+alias tmka="tmux kill-session -a"
+alias tmkw="tmux kill-window"
+alias tmw="tmux new-window"
+alias tmnw="tmux new-window -n"
+alias vsp="tmux splitw -v"
+alias hsp="tmux splitw -h"
