@@ -2,16 +2,14 @@ alias cp='cp -i'
 alias mv='mv -i'
 alias rm='rm -i'
 
-for N in $(seq 10)
-do 
-  S='.'
+for N in {1..10}
+do
   D=''
   for I in $(seq $N)
   do
-    S="$S."
     D="$D../"
   done
-  alias cd$S="cd $D"
+  alias ..$N="cd $D"
 done
 
 alias c="docker-compose "
