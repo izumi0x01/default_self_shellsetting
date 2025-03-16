@@ -1,0 +1,17 @@
+version: "3"
+services:
+  ubuntu-dev:
+    build:
+      context: .
+      args:
+        - UID=${UID}
+        - GID=${GID}
+        - USERNAME=${USERNAME}
+        - GROUPNAME=${GROUPNAME}
+        - PASSWORD=${PASSWORD}
+    container_name: ubuntu-dev-container
+    network_mode: "host"
+    tty: true
+    volumes:
+      - ./home:/home/${USERNAME}
+      - /tmp/.X11-unix:/tmp/.X11-unix:rw
