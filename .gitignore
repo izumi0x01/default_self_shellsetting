@@ -1,16 +1,13 @@
-#secret directory
-.ssh/*
-
 #tmp files
-.bash_history
-.lesshst
-.motd_shown
-.viminfo
-.cache/*
-.dotnet/*
-.vscode-remote-containers/*
-.vscode-server/*
-.wget-hsts
+/home/.bash_history
+/home/.lesshst
+/home/.motd_shown
+/home/.viminfo
+/home/.cache/*
+/home/.dotnet/*
+/home/.vscode-remote-containers/*
+/home/.vscode-server/*
+/home/.wget-hsts
 
 #tmux ignore
-.tmux/*
+/home/.tmux/*

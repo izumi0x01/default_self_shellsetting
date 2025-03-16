@@ -1,0 +1,7 @@
+{
+  "name": "Ubuntu DevContainer",
+  "dockerComposeFile": "../docker-compose.yml",
+  "service": "ubuntu-dev",
+  "workspaceFolder": "/home/user",
+  "remoteUser": "user"
+}

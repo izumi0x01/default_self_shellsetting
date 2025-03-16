@@ -29,6 +29,6 @@ if [ $SHLVL = 1 ]; then
     fi
 fi
 
-eval "$(oh-my-posh init bash --config ~/.poshthemes/catppuccin_macchiato.omp.json)"
+#eval "$(oh-my-posh init bash --config ~/.poshthemes/catppuccin_macchiato.omp.json)"
 
 
